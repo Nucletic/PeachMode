@@ -1,0 +1,4172 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Playfair Display', serif; */
+  /* font-family: 'Lato', sans-serif; */
+  /* font-family: 'Prata', serif; */
+  font-family: 'Inter', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+
+.loaderAnimation {
+  margin: auto;
+  animation: rotateloader 1s infinite linear;
+}
+
+@keyframes rotateloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(72deg);
+  }
+
+  40% {
+    transform: rotate(144deg);
+  }
+
+  60% {
+    transform: rotate(216deg);
+  }
+
+  80% {
+    transform: rotate(288deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.LeaderTitle h1 {
+  font-size: 45px;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.AnnouncementBar {
+  background: #f7aea6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  padding: 15px 40px;
+  z-index: 3;
+  width: 100%;
+}
+
+.AnnouncementBar button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.AnnouncementBar button svg {
+  fill: #56112a;
+  width: 20px;
+  vertical-align: -3px;
+}
+
+.AnnouncementBar .AnnouncementBarContent {
+  padding: 0 10px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 15px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 940px) {
+  .AnnouncementBar .AnnouncementBarContent {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .AnnouncementBar .AnnouncementBarContent {
+    width: 100%;
+  }
+
+  .AnnouncementBar {
+    padding: 15px 10px;
+  }
+}
+
+.AnnouncementBar .AnnouncementBarContent p {
+  font-size: 13px;
+  color: #56112a;
+  transition: 0.3s;
+}
+
+.MobileHeader {
+  display: none;
+}
+
+.Header {
+  padding: 78px 40px 28px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #dedede;
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
+  transition: 0.2s ease-in-out;
+}
+
+.StickyHeader {
+  padding: 70px 36px 20px 36px;
+}
+
+.Header .HeaderLeft img {
+  width: 195px;
+}
+
+.Header .HeaderCenter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.Header .HeaderCenter a {
+  font-size: 15px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s ease;
+  display: block;
+}
+
+.Header .HeaderCenter a::after {
+  content: '';
+  height: 1px;
+  width: 0%;
+  max-width: 90px;
+  background: #f03e64;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.Header .HeaderCenter a:hover::after {
+  width: 100%;
+}
+
+.Header .HeaderCenter a:hover {
+  color: #f03e64;
+}
+
+.Header .HeaderRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.Header .HeaderRight .HeaderRightSearch #HeaderRightSearchLabel svg {
+  width: 15px;
+  fill: #282c3f;
+  vertical-align: -2px;
+}
+
+.HeaderRightSearch {
+  position: relative;
+  align-items: center;
+  justify-content: end;
+}
+
+#HeaderRightSearchLabel {
+  padding: 2px 5px;
+  display: block;
+  cursor: pointer;
+  border-bottom: 1px solid #282c3f;
+}
+
+.HeaderRightSearch ul {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.HeaderRightSearch ul li {
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.HeaderRightSearch ul li:hover {
+  background: #f0f0f0;
+}
+
+#HeaderRightSearchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: auto;
+}
+
+.Header .HeaderRight a {
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+}
+
+.Header .HeaderRight button {
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+  border: none;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.Header .HeaderRight button span {
+  background: #282c3f;
+  width: 22px;
+  height: 22px;
+  display: block;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.NewsLetter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../public/images/AI2527C5-profile.webp');
+  height: 400px;
+  margin-top: 100px;
+}
+
+.NewsLetter form {
+  padding: 48px;
+  background: #fff;
+  margin: 48px 385px;
+  border-radius: 8px;
+  width: 500px;
+}
+
+.NewsLetter form .NewsLetterTitle {
+  text-align: center;
+}
+
+.NewsLetter form .NewsLetterTitle h2 {
+  font-size: 14px;
+  margin: 0 0 30px;
+  color: #1a1a1a;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.NewsLetter .NewsLetterInputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.NewsLetter .NewsLetterInputs input {
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  padding: 0 18px;
+  height: 52px;
+  width: 100%;
+  border: 1px solid rgba(34, 34, 34, .15);
+  border-radius: 4px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+}
+
+.NewsLetter .NewsLetterInputs input:focus~#NewsLetterLabel {
+  margin-top: -50px;
+  font-size: 12px;
+  color: #464646;
+}
+
+.NewsLetter .NewsLetterInputs label {
+  position: absolute;
+  margin-left: 15px;
+  color: rgba(34, 34, 34, 0.6);
+  font-size: 15px;
+  background: #fff;
+  padding: 0 5px;
+  transition: 0.2s ease-in-out;
+  pointer-events: none;
+  user-select: none;
+}
+
+.NewsLetter .NewsLetterInputs input:focus {
+  border: 2px solid #464646;
+}
+
+.NewsLetter .NewsLetterInputs button {
+  border-radius: 4px;
+  padding: 0 35px;
+  height: 52px;
+  border: none;
+  background: #f13f62;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.FooterService {
+  background: #f57f7f;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.FooterServicePart {
+  text-align: center;
+  color: #fff;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.FooterServicePart .FooterServicePartImg {
+  margin: 0 0 16px;
+}
+
+.FooterServicePart .FooterServicePartImg svg {
+  fill: #fff;
+  height: 26px;
+  width: 26px;
+}
+
+.FooterServicePart .FooterServicePartTitle h2 {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  margin: 0 0 13px;
+}
+
+.FooterServicePart .FooterServicePartDesc p {
+  font-size: 14px;
+  margin: 16px 0 0;
+  font-weight: 300;
+  line-height: 24px;
+  height: 30px;
+  width: 250px;
+}
+
+.MainFooter {
+  background: #ed4064;
+  padding: 25px 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.MainFooterLeftLinks h2 {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0 0 20px;
+}
+
+.MainFooterLeftLinks li {
+  list-style: none;
+  padding: 6px 0;
+}
+
+.MainFooterLeftLinks li a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.MainFooterLeftLinks li a:hover {
+  opacity: 0.7;
+}
+
+.MainFooterRightFollow h2 {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0 0 20px;
+}
+
+.MainFooterRightFollow ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f05d7b;
+  border-radius: 5px;
+}
+
+.MainFooterRightFollow li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  padding-top: 4px;
+  border-left: 1px solid #f05d7b;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.MainFooterRightFollow li::after {
+  content: '';
+  position: absolute;
+  height: 0;
+  margin-bottom: 3px;
+  width: 40px;
+  background: #fff;
+  transition: 0.3s;
+  z-index: -1;
+  margin-top: 40px;
+}
+
+.MainFooterRightFollow li:hover::after {
+  margin-top: 0;
+  height: 40px;
+}
+
+.MainFooterRightFollow li:hover .FollowFooterSVG {
+  fill: #ed4064;
+}
+
+.MainFooterRightFollow li:nth-child(1) {
+  border: none;
+}
+
+.MainFooterRightFollow li a svg {
+  fill: #fff;
+  width: 16px;
+  height: 16px;
+  transition: 0.3s;
+}
+
+.MainFooterRightNewsLetter {
+  width: 25%;
+}
+
+.MainFooterRightNewsLetter h2 {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0 0 20px;
+}
+
+.MainFooterRightNewsLetter p {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 26px;
+  padding: 0 0 15px;
+}
+
+.MainFooterRightNewsLetter label {
+  border: 1px solid #f05d7b;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  transition: 0.3s;
+}
+
+.MainFooterRightNewsLetter label input {
+  height: 52px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 15px;
+}
+
+.MainFooterRightNewsLetter label span {
+  position: absolute;
+  color: #fff;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.MainFooterRightNewsLetter label button {
+  background: transparent;
+  border: none;
+  fill: #fff;
+  cursor: pointer;
+}
+
+.MainFooterRightNewsLetter label button svg {
+  vertical-align: -2px;
+}
+
+/* responsive header and footer code  */
+
+@media only screen and (max-width: 1285px) {
+  .Header {
+    padding: 78px 20px 28px 20px;
+  }
+
+  .Header .HeaderLeft img {
+    width: 170px;
+  }
+
+  .HeaderRightSearch #HeaderRightSearchLabel {
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+  }
+
+  .HeaderRightSearch #HeaderRightSearchLabel #HeaderRightSearchInput {
+    width: 100%;
+  }
+
+  .HeaderRight .HeaderRightSearch {
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .Header {
+    display: none;
+  }
+
+  .LandingSlider {
+    padding: 0 !important;
+  }
+
+  .MobileHeader {
+    padding: 75px 30px 25px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .MobileHeaderLeft .MainMobileHeaderLeft button {
+    z-index: 3;
+    position: fixed;
+    top: 8.1%;
+    width: 320px;
+    left: -320px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: flex-start;
+    background: #fff;
+    box-shadow: -1px 2px 8px 0px rgba(0, 0, 0, 0.05);
+    transition: 0.5s ease-in-out;
+  }
+
+  .MobileHeaderLeft .MainMobileHeaderLeft div {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    position: fixed;
+    background: #fff;
+    height: 100%;
+    padding: 80px 40px 80px 40px;
+    top: 8%;
+    left: -320px;
+    overflow-y: scroll;
+    transition: 0.5s ease-in-out;
+    z-index: 2;
+  }
+
+  .MobileHeaderLeft .MainMobileHeaderLeft a {
+    padding: 20px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    text-decoration: none;
+    color: #1a1a1a;
+  }
+
+  .MobileHeaderLeft .MainMobileHeaderLeft a:last-child {
+    border: none;
+  }
+
+  .MobileHeader .MobileHeaderRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .MobileSearchCover {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    pointer-events: all;
+    background: rgba(0, 0, 0, 0.44);
+    transition: 0.5s ease-in-out;
+  }
+
+  .MobileSearch {
+    padding: 20px;
+    height: 180px;
+    width: calc(100% - 20px);
+    border-radius: 6px;
+    background: #fff;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .MobileSearch #MobileSearchCloseBtn {
+    margin-left: 90%;
+    width: 30px;
+    height: 30px;
+    outline: none;
+  }
+
+  .MobileSearch .MobileSearchMain {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .MobileSearch .MobileSearchMain input {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .MobileSearch .MobileSearchMain button {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    background: #ee3d63;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    margin-top: 30px;
+    border-radius: 5px;
+    margin-left: calc(100% - 100px);
+  }
+
+  .MobileHeaderRight #HeaderRightSearchLabel {
+    width: auto;
+    border-bottom: none;
+  }
+
+  .MobileHeaderRight #HeaderRightSearchLabel #HeaderRightSearchInput {
+    width: 0;
+  }
+
+  .MobileHeaderLeft button,
+  .MobileHeaderRight button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .NewsLetter form {
+    margin: 0;
+  }
+
+  .NewsLetter .NewsLetterInputs {
+    flex-direction: column;
+  }
+
+  .NewsLetter .NewsLetterInputs button {
+    width: 100%;
+  }
+
+  .NewsLetter .NewsLetterInputs label {
+    margin-top: 16px;
+    margin-right: 305px;
+  }
+
+  .NewsLetter .NewsLetterInputs input:focus~#NewsLetterLabel {
+    margin-top: -7px;
+    margin-right: 320px;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .FooterService {
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .NewsLetter form {
+    width: 300px;
+    padding: 20px;
+  }
+
+  .NewsLetter .NewsLetterInputs label {
+    margin-right: 165px;
+  }
+
+  .NewsLetter .NewsLetterInputs input:focus~#NewsLetterLabel {
+    margin-top: -7px;
+    margin-right: 175px;
+  }
+
+  .MobileHeaderCenter img {
+    width: 140px;
+  }
+
+  .MobileHeader {
+    padding: 65px 20px 15px 20px;
+  }
+}
+
+/* main footer resposive code */
+
+@media only screen and (max-width: 1075px) {}
+
+/* New Arrivals */
+
+.NewArrivals {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 0 0 0;
+}
+
+.MainNewArrivals {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+  flex-wrap: wrap;
+}
+
+.NewArrivalProduct {
+  width: 300px;
+  height: 350px;
+  cursor: pointer;
+  position: relative;
+}
+
+.NewArrivalProduct:hover .NewArrivalProductImgMain img {
+  width: 900px;
+  height: 900px;
+  object-position: -320px -120px;
+  animation: zoom .8s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.NewArrivalProductImg {
+  height: 300px;
+}
+
+.NewArrivalProductImgMain {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  background: #fff;
+}
+
+.NewArrivalProductImgMain img {
+  width: 300px;
+  height: 300px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.NewArrivalProductImgMain::before {
+  content:  var(--before-content, '');
+  position: absolute;
+  color: #fff;
+  top: 3%;
+  left: 3%;
+  background: #ee3d63;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 5px;
+  z-index: 1;
+}
+
+.NewArrivalProduct:hover .NewArrivalProductCartBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.NewArrivalProductCartBtn {
+  position: absolute;
+  top: 225px;
+  width: 93%;
+  padding: 16px 30px;
+  border-radius: 4px;
+  border: 1px solid #dedede;
+  font-size: 15px;
+  color: #222;
+  margin: 10px;
+  background: #fff;
+  z-index: 1;
+  cursor: pointer;
+  overflow-y: hidden;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: 0.15s ease-in-out;
+}
+
+.NewArrivalProductCartBtn::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: #ededed;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+  opacity: 0;
+  z-index: -1;
+  transform: translateY(100%);
+  transition: 0.15s ease-in;
+}
+
+.NewArrivalProductCartBtn:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.NewArrivalProductMobileCartBtn {
+  display: none;
+}
+
+.NewArrivalProductTitle {
+  text-decoration: none;
+}
+
+.NewArrivalProductTitle p {
+  font-size: 15px;
+  color: #1a1a1a;
+  margin: 4px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.NewArrivalProductTitle .NewArrivalProductPrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NewArrivalProductTitle .NewArrivalProductPrice p {
+  font-size: 15px;
+  color: #ee3d63;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+}
+
+.NewArrivalProductTitle .NewArrivalProductPrice p:last-child {
+  color: #636363;
+  font-weight: 300;
+}
+
+.NewArrivalProductTitle .NewArrivalProductPrice p strike {
+  font-family: 'Lato', sans-serif;
+}
+
+
+@media only screen and (max-width: 1285px) {
+
+  .NewArrival {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .MainNewArrivals {
+    gap: 20px;
+    justify-content: space-around;
+  }
+
+  .NewArrivalProduct {
+    width: 223px;
+    height: 300px;
+  }
+
+  .NewArrivalProductImg {
+    width: 223px;
+    height: 223px;
+  }
+
+  .NewArrivalProductImgMain {
+    width: 223px;
+    height: 223px;
+  }
+
+  .NewArrivalProductImgMain img {
+    width: 223px;
+    height: 223px;
+  }
+
+  .NewArrivalProductCartBtn {
+    top: 150px;
+    width: 90.5%;
+  }
+
+  .ViewAllBtn {
+    margin: 0px 0 0 !important;
+  }
+
+  .MainSummerArrivalsBox {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .MainSummerArrivalsImg {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .MainSummerArrivalsBoxTitle {
+    top: -2px;
+    width: 300px !important;
+    height: 300px !important;
+    text-align: center;
+  }
+
+  .MainSummerArrivalsBoxTitle h1 {
+    font-size: 28px !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .OnlineDesigner {
+    margin: 50px 50px !important;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .MainFooter {
+    padding: 25px 20px;
+  }
+
+  .MainFooterLeftLinks {
+    width: 160px;
+    margin-bottom: 20px;
+  }
+
+  .MainFooterLeftLinks li a {
+    font-size: 13px;
+  }
+
+  .LatestCollectionTabs {
+    width: 340px !important;
+    margin: 0 8px;
+  }
+
+  .LatestCollectionTabs button {
+    font-size: 11px !important;
+  }
+
+  .activeProductTab::after {
+    top: 30px !important;
+  }
+
+  .LeaderTitle h1 {
+    font-size: 30px;
+  }
+
+  .NewArrivalProductCartBtn {
+    display: none;
+  }
+
+  .NewArrivalProductMobileCartBtn {
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 82%;
+    background: #fff;
+    border: none;
+    padding: 4px 4px 1px 5px;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+  }
+
+  .NewArrivalProductMobileCartBtn:hover {
+    background: #dbdbdb;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .MainNewArrivals {
+    gap: 10px;
+    justify-content: space-around;
+  }
+
+  .NewArrivalProduct {
+    width: 150px;
+    height: 200px;
+  }
+
+  .NewArrivalProductImg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .NewArrivalProductImgMain {
+    width: 150px;
+    height: 150px;
+  }
+
+  .NewArrivalProductImgMain img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .NewArrivalProductMobileCartBtn {
+    top: 55% !important;
+    left: 71% !important;
+  }
+
+  .ViewAllBtn {
+    margin: 30px 0 0 !important;
+  }
+
+  .Cart {
+    width: 320px !important;
+  }
+
+  .BuyFromCart {
+    padding: 5px 10px !important;
+  }
+
+  .BuyFromCart .ViewAllBtn {
+    margin: 0 !important;
+    width: 300px;
+  }
+
+  .mainContentCartItems {
+    height: 72vh !important;
+  }
+
+  .productCartItem {
+    padding: 10px 10px !important;
+    gap: 10px !important;
+  }
+
+  .productCartItemMetaInfoLeft {
+    gap: 5px !important;
+  }
+
+  .productCartItemImg img {
+    width: 100px;
+  }
+
+  .productCartItemMetaInfo {
+    display: block !important;
+    width: auto !important;
+  }
+
+  .productCartItemMetaInfoRight {
+    text-align: left !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .MainNewArrivals {
+    padding: 0 10px;
+    gap: 8px !important;
+  }
+
+  .NewArrivalProduct {
+    width: 140px;
+    height: 200px;
+  }
+
+  .NewArrivalProductImg {
+    width: 140px;
+    height: 140px;
+  }
+
+  .NewArrivalProductImgMain {
+    width: 140px;
+    height: 140px;
+  }
+
+  .NewArrivalProductImgMain img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .NewArrivalProductMobileCartBtn {
+    top: 50% !important;
+    left: 71% !important;
+  }
+
+}
+
+.ViewAllBtn {
+  background: #ee3d63;
+  padding: 18px 35px;
+  margin: 48px 0 0;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.05s;
+}
+
+.ViewAllBtn:hover {
+  background: #fed264;
+}
+
+.ViewAllBtn:hover:after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.ViewAllBtn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+  z-index: -1;
+  transform: translateY(52px);
+  opacity: 0;
+  background: #ecc35d;
+  transition: 0.2s;
+}
+
+/* Latest Collection */
+
+.LatestCollection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.LatestCollectionTabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 580px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #dedede;
+}
+
+.LatestCollectionTabs button {
+  font-size: 13px;
+  margin: 0 0 18px;
+  font-weight: 500;
+  color: #5d5d5d;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.activeProductTab::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 33px;
+  background: #222;
+  left: 0;
+  animation: openWidth 0.3s;
+}
+
+@keyframes openWidth {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.OnlineDesigner {
+  margin: 50px 200px;
+  text-align: center;
+}
+
+.OnlineDesigner p {
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: -30px;
+  color: #222;
+  line-height: 28px;
+  text-align: center;
+}
+
+.SaleHome {
+  padding: 20px 0;
+}
+
+.MainSummerArrivalsBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 395px;
+  height: 395px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.MainSummerArrivalsBox:hover .MainSummerArrivalsImg {
+  transform: scale(1.03);
+}
+
+.MainSummerArrivalsImg {
+  width: 395px;
+  height: 395px;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+}
+
+.MainSummerArrivalsBoxTitle {
+  position: absolute;
+  top: -2px;
+  width: 395px;
+  height: 397px;
+  background: #00000038;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MainSummerArrivalsBoxTitle h1 {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.Login {
+  padding: 160px 40px 100px 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Login form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.LoginInputs {
+  border: 1px solid #dedede;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  width: 460px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.LoginInputs input {
+  width: 100%;
+  font-size: 15px;
+  border: none;
+  outline: none;
+}
+
+.LoginInputs a {
+  font-size: 13px;
+  font-weight: 400;
+  color: #222222b3;
+  width: 170px;
+  letter-spacing: 0.6px;
+  transition: 0.2s;
+}
+
+.LoginInputs a:hover {
+  color: #222;
+}
+
+.LoginInputs span {
+  position: absolute;
+  text-align: left;
+  color: #222222b3;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  transition: 0.2s;
+  background: #fff;
+  padding: 0 4px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.LoginInputs input:focus~.LoginInputSpan,
+.LoginInputs input:valid~.LoginInputSpan {
+  transform: translateX(-6px) translateY(-26px);
+  font-size: 12px;
+}
+
+.LoginInputs input:focus~.LoginInputs {
+  border: 2px solid #222222;
+}
+
+.LoginBtn button {
+  margin-top: 18px;
+}
+
+.LoginBtn button,
+.OtpLoginBtn button {
+  width: 460px;
+  height: 52px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #fff;
+  background: #f13f62;
+  cursor: pointer;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.OtpLoginBtn button {
+  background: #f7aea6;
+}
+
+.LoginBtn button::after,
+.OtpLoginBtn button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ecc35d;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(52px);
+  transition: 0.2s;
+}
+
+.OtpLoginBtn button::after {
+  background: #e6a29a;
+}
+
+.LoginBtn button:hover {
+  background: #fed264;
+}
+
+.LoginBtn button:hover:after,
+.OtpLoginBtn button:hover:after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.newCustomerLink {
+  margin-top: 10px;
+}
+
+.newCustomerLink p,
+.newCustomerLink a {
+  font-size: 15px;
+  font-weight: 400;
+  color: #222222b3;
+  transition: 0.2s;
+}
+
+.newCustomerLink a:hover {
+  color: #222;
+}
+
+@media only screen and (max-width: 1200px) {
+  .Login {
+    padding: 0 20px 100px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .Login .OnlineDesigner {
+    margin: 25px !important;
+  }
+
+  .Login .LoginInputs {
+    width: 300px;
+  }
+
+  .Login .LoginInputs a {
+    font-size: 10px;
+    margin-left: 15px;
+  }
+
+  .Login button {
+    width: 300px;
+  }
+}
+
+
+
+
+/* Product Page */
+
+.ProductPage {
+  padding: 160px 40px 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.JustForYouTitle {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
+
+.JustForYouTitle h3 {
+  font-size: 13px;
+  color: #222222b3;
+  font-weight: 400;
+}
+
+.JustForYouTitle h3 a {
+  text-decoration: none;
+  color: #222222b3;
+  transition: 0.2s;
+}
+
+.JustForYouTitle h3 a:hover {
+  color: #222;
+}
+
+.ProductPageMain {
+  display: flex;
+  margin: 40px 40px;
+  gap: 50px;
+}
+
+.ProductPageLeft {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+.ProductPageLeftImg {
+  display: flex;
+  overflow: hidden;
+}
+
+.ProductPageLeftImg img {
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+}
+
+.ProductPageLeftAllImg {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  margin-inline: 10px;
+}
+
+.ProductPageLeftAllImg img {
+  width: 72px;
+  height: 72px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.giveBorderToImg {
+  border: 2px solid #222;
+}
+
+.ProductPageRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductPageRightTitle h1 {
+  font-size: 28px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.ProductPageRightPrice {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 30px 0;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 30px;
+}
+
+.ProductPageRightPriceMain {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 0 8px 0;
+}
+
+.ProductPageRightPrice h3 {
+  font-size: 22px;
+  color: #ee3d63;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+}
+
+.ProductPageRightPrice p strike {
+  font-size: 15px;
+  color: #636363;
+  font-family: 'Lato', sans-serif;
+}
+
+.ProductPageRightPrice span {
+  font-size: 12px;
+  background: #ee3d63;
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.ProductPageRightPrice h4 {
+  font-size: 13px;
+  color: #008000;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.ProductPageRightColorVariant {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.ProductPageRightColorVariantTitle p {
+  margin: 0 0 15px;
+  font-size: 15px;
+  color: #1c1c1c;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+}
+
+.ProductPageRightColorVariantMain {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.ProductPageRightColorVariantMain a {
+  width: 72px;
+}
+
+.ProductPageRightColorVariantMain a img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.ProductPageRightColorVariantMain button {
+  width: 52px;
+  height: 50px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 15px;
+  color: #ef3f69;
+  font-weight: 600;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.ProductPageRightColorVariantMain .activeSize {
+  border: 2px solid #222;
+  background: #f5f1ec;
+}
+
+.ProductPageRightQuantity {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.ProductPageRightQuantityMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dedede;
+  width: 138px;
+  height: 46px;
+  border-radius: 4px;
+}
+
+.ProductPageRightQuantityMain button {
+  background: transparent;
+  border: none;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  outline: none;
+}
+
+.ProductPageRightQuantityMain button svg {
+  fill: #222222;
+  height: 10px;
+  width: 10px;
+}
+
+.ProductPageRightQuantity span {
+  padding: 13px 10px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  outline: none;
+}
+
+.ProductPageRightShare {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.ProductPageRightShare p {
+  font-size: 14px;
+  color: #222222b3;
+}
+
+.ProductPageRightShare a svg {
+  fill: #222222b3;
+  height: 13px;
+  width: 13px;
+}
+
+.ProductPageRightShare a svg:hover {
+  fill: #222;
+}
+
+.ProductPageRightButtons button {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .ProductPage {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .ProductPage {
+    margin: 20px 5px;
+  }
+
+  .ProductPageLeft {
+    flex-direction: column;
+    height: 600px;
+    gap: 10px;
+  }
+
+  .ProductPageLeftAllImg {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .ProductPageMain {
+    gap: 20px;
+    margin: 20px 20px;
+  }
+
+  .ProductPageRightTitle h1 {
+    font-size: 20px;
+  }
+
+  .ProductPageRightButtons button {
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 1020px) {
+  .ProductPageRightPrice {
+    padding: 10px 0 15px 0;
+    margin-bottom: 15px;
+  }
+
+  .ProductPageRightColorVariant {
+    margin-bottom: 10px;
+  }
+
+  .ProductPageRightQuantity {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .ProductPageMain {
+    flex-direction: column;
+  }
+
+  .ProductPageTabsMain {
+    gap: 15px !important;
+  }
+
+  .ProductPageTabsMain button {
+    font-size: 12px !important;
+    margin: 0 0 0;
+    font-weight: 500;
+    color: #5d5d5d;
+    height: 16px;
+  }
+
+  .ProductPageTabsSpecifications p b {
+    font-size: 13px !important;
+    width: 170px !important;
+  }
+
+  .ProductPageTabsSpecifications p span {
+    line-height: 20px !important;
+    font-size: 13px !important;
+  }
+
+  .YouMayAlsoLike .MainNewArrivals {
+    gap: 10px !important;
+    justify-content: space-around !important;
+  }
+
+  .YouMayAlsoLike .NewArrivalProduct {
+    width: 150px !important;
+    height: 200px !important;
+  }
+
+  .YouMayAlsoLike .NewArrivalProductImg {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .YouMayAlsoLike .NewArrivalProductImgMain {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .YouMayAlsoLike .NewArrivalProductImgMain img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .YouMayAlsoLike .NewArrivalProductMobileCartBtn {
+    top: 55% !important;
+    left: 71% !important;
+  }
+
+  .YouMayAlsoLike .NewArrivalProductImgMain::before {
+    top: 3% !important;
+    left: 3% !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    padding: 2px 3px !important;
+  }
+
+  .YouMayAlsoLike .NewArrivalProductCartBtn {
+    display: none !important;
+  }
+
+  .YouMayAlsoLike .NewArrivalProductMobileCartBtn:hover {
+    background: #dbdbdb !important;
+  }
+
+  .YouMayAlsoLike .NewArrivalProduct {
+    margin-bottom: 15px !important;
+  }
+}
+
+/* landing page slider */
+
+.LandingSlider {
+  padding: 165px 0 0 0;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.LandingSlider div {
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  display: block;
+  margin: auto;
+}
+
+.LandingSlider .LandingSliderDots {
+  display: flex;
+  width: 90px;
+  height: 3px;
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 10px;
+}
+
+.LandingSlider .LandingSliderDots button {
+  width: 40px;
+  height: 3px;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  cursor: pointer;
+}
+
+/* Cart Code */
+.Cart {
+  position: fixed;
+  background: #fff;
+  width: 500px;
+  height: 100vh;
+  top: 0;
+  right: -500px;
+  z-index: 5;
+  transition: 0.5s ease-in-out;
+}
+
+.cartCover {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.44);
+  transition: 0.5s ease-in-out;
+}
+
+.CartHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  border-bottom: 1px solid #dedede;
+}
+
+.CartHead .LeftCartHead {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.CartHead .LeftCartHead p {
+  font-size: 16px;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.CartHead .LeftCartHead svg {
+  fill: #222;
+  height: 22px;
+  width: 22px;
+}
+
+.CartHead .RightCartHead {
+  background: transparent;
+  border: none;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.CartHead .RightCartHead svg {
+  fill: #222;
+  width: 25px;
+  height: 25px;
+}
+
+.EmptyCart {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.EmptyCart p {
+  color: #222;
+  font-size: 15px;
+  margin: 0 0 15px;
+}
+
+.EmptyCart .ViewAllBtn {
+  margin: 0;
+}
+
+.productCartItem {
+  display: flex;
+  gap: 25px;
+  padding: 24px 40px;
+}
+
+.productCartItemImg img {
+  border-radius: 5px;
+}
+
+.productCartItemMetaInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.productCartItemMetaInfoLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productCartItemMetaInfoLeft p {
+  font-size: 14px;
+  color: #222;
+  width: 180px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.productCartItemMetaInfoRight {
+  text-align: right;
+}
+
+.productCartItemMetaInfoRight p {
+  color: #ee3d63;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  font-family: 'Lato', sans-serif;
+}
+
+.productCartItemMetaInfoRight strike {
+  color: #636363;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+}
+
+.productCartItemMetaInfoQuantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.productCartItemMetaInfoQuantity a {
+  font-size: 12px;
+  color: #222222b3;
+}
+
+.productCartItemMetaInfoQuantity a:hover {
+  color: #222;
+}
+
+.productCartItemMetaInfoQuantity div {
+  display: flex;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  width: 84px;
+}
+
+.productCartItemMetaInfoQuantity div button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 3px;
+  color: #222;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.productCartItemMetaInfoQuantity div span {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+  font-size: 14px;
+}
+
+.ProductPageTabs {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 8px 0 8px;
+  width: 95%;
+  margin-bottom: 100px;
+}
+
+.ProductPageTabsMain {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  width: 100%;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #dedede;
+}
+
+.ProductPageTabsMain button {
+  font-size: 13px;
+  margin: 0 0 18px;
+  font-weight: 500;
+  color: #5d5d5d;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+  position: relative;
+}
+
+.activeProductPageTabsMain {
+  color: #222 !important;
+}
+
+.activeProductPageTabsMain::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  max-width: 200px;
+  width: 100%;
+  top: 33px;
+  height: 2px;
+  background: #222;
+  animation: underAnim 0.3s;
+}
+
+@keyframes underAnim {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.ProductPageTabsDescription p {
+  font-size: 14px;
+  color: #222;
+  font-family: 'lato', serif;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.ProductPageTabsSpecifications p {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.ProductPageTabsSpecifications p b {
+  width: 300px;
+  color: #222222;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ProductPageTabsSpecifications p span {
+  width: 80%;
+  display: block;
+  color: #222222;
+  font-size: 15px;
+  line-height: 26px;
+}
+
+
+.YouMayAlsoLike .NewArrival {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.YouMayAlsoLike .MainNewArrivals {
+  gap: 20px;
+  padding: 0;
+}
+
+.YouMayAlsoLike .NewArrivalProduct {
+  width: 223px;
+}
+
+
+.YouMayAlsoLike .NewArrivalProductImg {
+  width: 223px;
+  height: 223px;
+}
+
+.YouMayAlsoLike .NewArrivalProductImgMain {
+  width: 223px;
+  height: 223px;
+}
+
+.YouMayAlsoLike .NewArrivalProductImgMain img {
+  width: 223px;
+  height: 223px;
+}
+
+.YouMayAlsoLike .NewArrivalProductCartBtn {
+  top: 158px;
+  width: 91.5%;
+  padding: 13px 26px;
+}
+
+.mainContentCart {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContentCartItems::-webkit-scrollbar {
+  display: none;
+}
+
+.mainContentCartItems {
+  overflow-y: scroll;
+  height: 70vh;
+}
+
+.BuyFromCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border-top: 1px solid #dedede;
+  padding: 24px 40px;
+}
+
+.BuyFromCart p {
+  font-size: 13px;
+  color: #222222b3;
+}
+
+.BuyFromCart a {
+  margin: 10px;
+  width: 430px;
+  text-align: center;
+}
+
+
+/* Collection page */
+
+.NotFoundAnimation {
+  margin: auto;
+  text-align: center;
+  height: 400px;
+}
+
+.NotFoundAnimation h2 {
+  color: #1a1a1a;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.NotFoundAnimation p {
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+
+.Collection {
+  padding: 180px 40px 0 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Collection .LeaderTitle {
+  text-align: center;
+}
+
+.Collection .LeaderTitle h1 {
+  font-size: 30px;
+}
+
+.MainCollection {
+  display: flex;
+  width: 100%;
+}
+
+.CollectionLeft {
+  width: 300px;
+  margin-right: 20px;
+}
+
+.CollectionLeftFiltersTitle {
+  margin-top: -20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.CollectionLeftFiltersTitle h1 {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+@media only screen and (max-width: 765px) {
+  .CollectionLeftFiltersTitle h1 {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .CollectionLeftFiltersTitle h1 {
+    font-size: 16px;
+  }
+}
+
+.CollectionLeftMainFilter:focus {
+  background-color: #000;
+}
+
+.CollectionLeftMainFilter {
+  display: flex;
+  flex-direction: column;
+}
+
+.CollectionLeftMainFilterTitleBtn {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 4px 20px 0;
+  border-bottom: 1px solid #ddd;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  pointer-events: all;
+  background: #fff;
+  outline: none;
+}
+
+.CollectionLeftMainFilterTitleBtn h3 {
+  font-size: 15px;
+  color: #222;
+  font-weight: 500;
+}
+
+.CollectionLeftMainFilterTitleBtn svg {
+  width: 12px;
+  height: 12px;
+  color: #222;
+  margin-top: 3px;
+}
+
+.CollectionLeftMainFilterItemsType {
+  padding: 0;
+  overflow-y: scroll;
+  height: 0;
+}
+
+.CollectionLeftMainFilterItemsType::-webkit-scrollbar {
+  display: none;
+}
+
+.CollectionLeftMainFilterItem {
+  padding: 6px 0;
+}
+
+.openFilter {
+  height: auto;
+  padding: 10px 0;
+}
+
+.openFilterBtn svg {
+  transform: rotate(180deg);
+}
+
+.CollectionLeftMainFilterItem label {
+  display: flex;
+  gap: 10px;
+}
+
+.CollectionLeftMainFilterItem input {
+  width: 18px;
+  height: 18px;
+  accent-color: #363636;
+  cursor: pointer;
+  outline: none;
+}
+
+.CollectionLeftMainFilterItem p {
+  font-size: 15px;
+  color: #222;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+}
+
+.CollectionRight {
+  width: 970px;
+}
+
+.CollectionRight .JustForYouTitle {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.CollectionRight .JustForYouTitle h3 {
+  color: #222;
+}
+
+.CollectionRightMainItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 60px;
+}
+
+.CollectionRightMainItems .NewArrival {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.CollectionRightMainItems .MainNewArrivals {
+  gap: 20px;
+  padding: 0;
+}
+
+.CollectionRightMainItems .NewArrivalProduct {
+  width: 223px;
+  height: 285px;
+}
+
+.CollectionRightMainItems .NewArrivalProductImg {
+  width: 223px;
+  height: 223px;
+}
+
+.CollectionRightMainItems .NewArrivalProductImgMain {
+  width: 223px;
+  height: 223px;
+}
+
+.CollectionRightMainItems .NewArrivalProductImgMain img {
+  width: 223px;
+  height: 223px;
+}
+
+.CollectionRightMainItems .NewArrivalProductCartBtn {
+  top: 158px;
+  width: 91.5%;
+  padding: 13px 26px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .Collection {
+    padding: 0 20px 0 20px;
+  }
+
+  .MainCollection {
+    justify-content: space-between;
+  }
+
+  .CollectionLeft {
+    min-width: 240px;
+  }
+
+  .CollectionRightMainItems {
+    justify-content: center;
+  }
+
+  .CollectionRight {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  .MainCollection {
+    display: block;
+  }
+
+  .CollectionRight .JustForYouTitle {
+    margin-top: 40px;
+  }
+
+  .CollectionRightMainItems {
+    justify-content: space-evenly;
+  }
+
+  .CollectionLeft {
+    max-width: auto;
+    width: auto;
+    margin: 0;
+  }
+
+  .CollectionLeftFilters {
+    overflow: hidden;
+    height: 55px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .CollectionLeftFiltersTitle {
+    border: 1px solid #dddddd;
+    padding: 12px 10px;
+    margin: 0;
+  }
+
+  .CollectionLeftFiltersTitle::after {
+    content: '';
+    background: url('https://cdns.iconmonstr.com/wp-content/releases/preview/2018/240/iconmonstr-filter-thin.png');
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 35%;
+    right: 0;
+    margin-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  .CollectionRightMainItems .MainNewArrivals {
+    gap: 10px;
+    justify-content: space-around;
+  }
+
+  .CollectionRightMainItems .NewArrivalProduct {
+    width: 150px;
+    height: 200px;
+  }
+
+  .CollectionRightMainItems .NewArrivalProductImg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .CollectionRightMainItems .NewArrivalProductImgMain {
+    width: 150px;
+    height: 150px;
+  }
+
+  .CollectionRightMainItems .NewArrivalProductImgMain img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .CollectionRightMainItems .NewArrivalProductMobileCartBtn {
+    top: 55%;
+    left: 71%;
+  }
+
+  .CollectionRightMainItems .NewArrivalProductImgMain::before {
+    top: 3%;
+    left: 3%;
+    font-size: 10px;
+    font-weight: 400;
+    padding: 2px 3px;
+  }
+
+  .NewArrivalProductCartBtn {
+    display: none;
+  }
+
+  .NewArrivalProductMobileCartBtn {
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 82%;
+    background: #fff;
+    border: none;
+    padding: 4px 4px 1px 5px;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+  }
+
+  .NewArrivalProductMobileCartBtn:hover {
+    background: #dbdbdb;
+  }
+
+  .CollectionRightMainItems .NewArrivalProduct {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .Collection {
+    padding: 0 6px;
+  }
+
+  .Collection .LeaderTitle h1 {
+    margin: 0 0 10px;
+    font-size: 26px;
+  }
+
+  .CollectionRightMainItems {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .CollectionLeftFiltersTitle {
+    padding: 10px 8px;
+  }
+
+  .CollectionLeftFiltersTitle h1 {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+/* account page */
+.Account {
+  padding: 165px 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accountTabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 27px 0;
+  border-bottom: 1px solid #dedede;
+  width: 100%;
+}
+
+.accountTabs a {
+  color: #222;
+  font-size: 15px;
+  text-decoration: none;
+  position: relative;
+  margin: 0 8px;
+  font-weight: 300;
+}
+
+.accountTabs a::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  max-width: 140px;
+  width: 0;
+  background: #222;
+  top: 100%;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.accountTabs a:hover:after {
+  width: 100%;
+}
+
+.activeAccountTab {
+  border-bottom: 1px solid #222;
+}
+
+.AddressTitle h1 {
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  color: #222;
+  font-weight: 500;
+  margin: 40px 0;
+}
+
+.AddressTitle span {
+  font-size: 12px;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  background: #1a1a1a;
+  padding: 2px 9px 5px 9px;
+  border-radius: 40px;
+  font-weight: 500;
+  margin: 40px 0;
+  vertical-align: 18px;
+}
+
+.Addresses {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 8%;
+}
+
+.Addresses .LeftAddresses,
+.RightAddresses {
+  padding: 24px;
+  width: 280px;
+  height: 270px;
+  border: 1px solid #dedede;
+}
+
+.Addresses .RightAddresses {
+  background: #f5f1ec;
+  border: none;
+  color: #222222b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #dedede;
+}
+
+.Addresses .RightAddresses svg {
+  fill: #222222b3;
+  height: 30px;
+  width: 30px;
+  margin-bottom: 10px;
+}
+
+.Addresses .RightAddresses p {
+  transition: 0.2s;
+  width: 150px;
+  border-bottom: 1px solid #dedede;
+}
+
+.Addresses .RightAddresses:hover {
+  fill: #222;
+  color: #222;
+}
+
+.Addresses .LeftAddresses {
+  border-right: 1px solid #dedede;
+  overflow: scroll;
+}
+
+.Addresses .LeftAddresses p {
+  font-size: 15px;
+  color: #222;
+  line-height: 28px;
+}
+
+.LeftAddressesTitle h3 {
+  font-family: 'Lato', sans-serif;
+  color: #3a3a3a;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.LeftAddresses .LeftAddressesButtons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.LeftAddresses .LeftAddressesButtons button,
+.LeftAddresses .LeftAddressesButtons a {
+  font-size: 15px;
+  color: #222222b3;
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid #dedede;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.LeftAddresses .LeftAddressesButtons button:hover,
+.LeftAddresses .LeftAddressesButtons a:hover {
+  color: #222;
+  border-bottom: 1px solid #222;
+}
+
+
+.AddressFormBig {
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.AddressFormBig h1 {
+  font-size: 28px;
+  color: #1a1a1a;
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.AddressFormBig p {
+  font-size: 14px;
+  color: #1a1a1a;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding-bottom: 22px;
+  font-family: 'Lato', sans-serif;
+}
+
+.AddressForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AddressFormMain {
+  width: 450px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  margin-bottom: 50px;
+  padding: 15px;
+}
+
+.AddressFormMain .LoginInputs {
+  width: auto;
+}
+
+.AddressFormMainName {
+  display: flex;
+  gap: 12px;
+}
+
+.AddressFormMain select {
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  width: 100%;
+  padding: 15px 40px 15px 15px;
+  color: #1a1a1a;
+  outline: none;
+}
+
+.AddressForm button {
+  margin-top: 15px;
+  width: 100%;
+  height: 52px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background: #f13f62;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.AddressForm button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ecc35d;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.AddressForm button:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.AddressForm button:hover {
+  background: #fed264;
+}
+
+.AddressFormMaincheckBox {
+  padding-top: 15px;
+}
+
+.AddressFormMaincheckBox label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  width: 110px;
+}
+
+.AddressFormMaincheckBox label span {
+  font-size: 13px;
+  color: #222222b3;
+  user-select: none;
+}
+
+.AddressFormMaincheckBox label input {
+  width: 15px;
+  height: 15px;
+  accent-color: #222;
+  cursor: pointer;
+}
+
+.Profile {
+  border: 1px solid #dedede;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.Profile .ProfileNameEmail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 274px;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 10px;
+}
+
+.Profile p {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  color: #222;
+  line-height: 24px;
+}
+
+.Profile p b {
+  width: 85px;
+  min-width: 85px;
+  display: block;
+  color: #222;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.Profile .ProfileNameEmail h3 {
+  font-weight: 500;
+  color: #222;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.Profile .ProfileNameEmail p {
+  font-weight: 400;
+  color: #222222b3;
+  font-size: 13px;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .AddressFormBig {
+    padding: 0 0 50px;
+  }
+
+  .Account {
+    padding: 0 0 50px;
+  }
+
+  .Addresses {
+    padding: 0 20px;
+  }
+}
+
+/* Contact Information */
+
+.ContactInformation {
+  display: flex;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+.ContactInformation .LeftContactInformation {
+  width: 60%;
+  padding: 56px 66px 50px 125px;
+}
+
+.ContactInformation .RightContactInformation {
+  background: #f6f3ed;
+  width: 40%;
+  border-left: 1px solid #dddbd5;
+  padding: 56px 80px 0 50px;
+}
+
+.ContactInformationTitle {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 28px;
+}
+
+.ContactInformationTitleBreadCrum {
+  margin: 14px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ContactInformationTitleBreadCrum a {
+  font-size: 12px;
+  color: #ed4064;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.ContactInformationTitleBreadCrum a:nth-child(2) {
+  color: #333;
+}
+
+.ContactInformationTitleBreadCrum a svg {
+  margin-left: 8px;
+}
+
+.ContactInformationForm {
+  width: 100%;
+}
+
+.ContactInformationFormAccountEmail .LoginInputs {
+  width: 100%;
+}
+
+.ContactInformationFormAccountEmailTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ContactInformationFormAccountEmailTitle h3 {
+  font-size: 18px;
+  color: #333;
+  font-weight: normal;
+}
+
+.ContactInformationFormAccountEmailTitle p {
+  font-size: 14px;
+  color: #545454;
+}
+
+.ContactInformationFormAccountEmailTitle p a {
+  color: #ed4064;
+  text-decoration: none;
+}
+
+.ContactInformationFormAccountEmailTitleEmailNewsCheckbox {
+  display: flex;
+  gap: 10px;
+  color: #545454;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ContactInformationFormAccountEmailTitleEmailNewsCheckbox input {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  accent-color: #ed4064;
+}
+
+.ContactInformationFormMain .ContactInformationFormAccountEmailTitle {
+  margin-top: 40px;
+}
+
+.LoggedInContactInfo {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.LoggedInContactInfo .LoggedInContactInfoProfilePic img {
+  border-radius: 40px;
+}
+
+.LoggedInContactInfo .LoggedInContactInfoMetaInfo {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.LoggedInContactInfo .LoggedInContactInfoMetaInfo p {
+  color: #545454;
+  margin-bottom: 4px;
+}
+
+.LoggedInContactInfo .LoggedInContactInfoMetaInfo a {
+  text-decoration: none;
+  color: #ed4064;
+}
+
+.ContactInformationFormMainName {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ContactInformationFormMainName .LoginInputs {
+  width: 49%;
+}
+
+.ContactInformationFormOtherInput .LoginInputs {
+  width: 100%;
+}
+
+.ContactInformationFormCityStateInput {
+  display: flex;
+  gap: 2%;
+}
+
+.ContactInformationFormCityStateInput .LoginInputs,
+.ContactInformationFormCityStateInput select {
+  width: 32%;
+}
+
+.ContactInformationFormCityStateInput select {
+  height: 52px;
+  padding: 15px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  color: #222222b3;
+  outline: none;
+}
+
+.ContactInformationFormAccountSaveInfo .ContactInformationFormAccountEmailTitleEmailNewsCheckbox {
+  margin-bottom: 10px;
+}
+
+.ContactInformationFormSubmitReturn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.ContactInformationFormSubmitReturn button {
+  width: 200px;
+  height: 55px;
+  background: #ed4064;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.ContactInformationFormSubmitReturn button:hover {
+  background: #e41641;
+}
+
+.ContactInformationFormSubmitReturn a {
+  color: #ed4064;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.RightContactInformationProducts {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.RightContactInformationProductsMain {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.RightContactInformationProductsLeft {
+  display: flex;
+  position: relative;
+}
+
+.RightContactInformationProductsAmountLeft {
+  position: absolute;
+  left: 85%;
+  top: -15%;
+  background: #727272e6;
+  border-radius: 50px;
+  padding: 3px 7px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.RightContactInformationProductsLeft img {
+  border-radius: 8px;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+}
+
+.RightContactInformationProductsRight {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.RightContactInformationProductsRight h3 {
+  font-size: 14px;
+  color: #31312f;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.RightContactInformationProductsRight p {
+  font-size: 13px;
+  color: #31312f;
+  font-weight: 600;
+}
+
+.RightContactInformationProductsSubtotal {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.RightContactInformationProductsSubtotal p {
+  display: flex;
+  justify-content: space-between;
+  line-height: 26px;
+  font-size: 14px;
+  color: #51504e;
+  font-weight: 400;
+}
+
+.RightContactInformationProductsSubtotal p b {
+  color: #31312f;
+  font-weight: 600;
+}
+
+.RightContactInformationProductsTotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.RightContactInformationProductsTotalLeft h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #31312f;
+}
+
+.RightContactInformationProductsTotalLeft p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6f6d6b;
+}
+
+.RightContactInformationProductsTotalLeft input {
+  height: 46px;
+  padding: 13px 11px;
+  border-radius: 5px;
+  border: 1px solid #d1cfc9;
+  outline: none;
+  width: auto;
+}
+
+.RightContactInformationProductsTotalLeft input:focus {
+  outline: 2px solid #ed4064;
+  border: none;
+}
+
+.RightContactInformationProductsTotalRight p {
+  font-size: 24px;
+  color: #31312f;
+  font-weight: 500;
+}
+
+.RightContactInformationProductsTotalRight button {
+  color: #fff;
+  font-weight: 500;
+  height: 46px;
+  background: #ed4064;
+  border-radius: 5px;
+  width: 90px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.RightContactInformationProductsTotalRight button:hover {
+  background: #e41641;
+}
+
+.OrderSummaryMobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .ContactInformation .LeftContactInformation {
+    padding: 20px 33px 50px 50px;
+  }
+
+  .ContactInformation .RightContactInformation {
+    padding: 20px 20px 0 30px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .ContactInformation {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .ContactInformation .LeftContactInformation {
+    width: 100%;
+    padding: 20px 20px 50px 20px;
+  }
+
+  .ContactInformation .RightContactInformation {
+    width: 100%;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .changeRightInformationHeight {
+    height: auto !important;
+    padding: 20px 20px 0 30px!important;
+  }
+
+  .RightContactInformationProducts {
+    align-items: initial;
+  }
+
+  .RightContactInformationProductsRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .OrderSummaryMobile {
+    display: flex;
+    padding: 20px 20px;
+    background: #fafafa;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .OrderSummaryMobile svg {
+    fill: #ed4064;
+  }
+
+  .OrderSummaryMobile div {
+    display: flex;
+    gap: 8px;
+  }
+
+  .OrderSummaryMobile div p {
+    display: flex;
+    align-items: center;
+    color: #ed4064;
+    font-size: 14px;
+  }
+
+  .OrderSummaryMobile div p svg {
+    height: 12px;
+    width: 12px;
+    margin-top: 3px;
+    margin-left: 6px;
+  }
+
+  .OrderSummaryMobile h3 {
+    font-size: 24px;
+    color: #31312f;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .ContactInformationTitleLogo {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 550px) {
+  .OrderSummaryMobile div p {
+    font-size: 13px;
+  }
+
+  .OrderSummaryMobile h3 {
+    font-size: 20px;
+  }
+
+  .ContactInformationFormAccountEmailTitle h3 {
+    font-size: 16px;
+  }
+
+  .LoggedInContactInfoMetaInfo p,
+  .LoggedInContactInfoMetaInfo a {
+    font-size: 12px;
+  }
+
+  .ContactInformationFormSubmitReturn button {
+    width: 160px;
+    height: 45px;
+    font-size: 13px;
+  }
+
+  .ContactInformationFormSubmitReturn a {
+    font-size: 13px;
+  }
+
+  .ShippingInfo {
+    padding: 10px 14px !important;
+  }
+
+  .ShippingInfoMain {
+    display: block !important;
+  }
+
+  .ShippingInfoMain p {
+    font-size: 13px !important;
+    width: auto !important;
+  }
+
+  .PaymentMethodMain {
+    padding: 14px !important;
+  }
+
+  .PaymentMethod .PaymentMethodMain label {
+    gap: 14px !important;
+    font-size: 12px !important;
+  }
+
+  .PaymentMethod .PaymentMethodMain label img {
+    display: none;
+  }
+}
+
+
+.ShippingInfo {
+  border: 1px solid #d9d9d9;
+  padding: 12px 16px;
+  border-radius: 4px;
+}
+
+.ShippingInfoMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.ShippingInfoMain:nth-child(1) {
+  padding-bottom: 12px;
+}
+
+.ShippingInfoMain:nth-child(2) {
+  padding: 12px 0;
+}
+
+.ShippingInfoMain:nth-child(3) {
+  padding-top: 12px;
+  border: none;
+  justify-content: initial;
+}
+
+.ShippingInfoMain h3 {
+  width: 90px;
+  font-size: 14px;
+  color: #737373;
+  padding: 0 16px 0 0;
+  font-weight: 400;
+}
+
+.ShippingInfoMain p {
+  font-size: 14px;
+  color: #333;
+  width: 460px;
+  line-height: 20px;
+}
+
+.ShippingInfoMain a {
+  font-size: 12px;
+  color: #ea1f4a;
+  text-decoration: none;
+}
+
+.ShippingInfoMain p b {
+  font-weight: 500;
+}
+
+.PaymentMethodTitle {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.PaymentMethodTitle h3 {
+  font-size: 18px;
+  color: #333;
+  font-weight: 400;
+}
+
+.PaymentMethodTitle p {
+  font-size: 14px;
+  color: #545454;
+}
+
+.PaymentMethod {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.PaymentMethod .PaymentMethodMain {
+  padding: 16px;
+}
+
+.PaymentMethod .PaymentMethodMain:nth-child(1) {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.PaymentMethod .PaymentMethodMain label {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.PaymentMethod .PaymentMethodMain label input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.PaymentMethod .PaymentMethodMain label div span {
+  font-size: 12px;
+  color: #737373;
+}
+
+.PaymentMethod .PaymentMethodMain label div {
+  display: flex;
+  gap: 4px;
+  width: 246px;
+  align-items: center;
+}
+
+/* admin code */
+
+.Admin {
+  background: #ffd2d4;
+}
+
+.AdminMain {
+  display: flex;
+}
+
+.AdminLeftPanel {
+  display: flex;
+  flex-direction: column;
+  width: 16%;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid #d8dde3;
+  background: #fff;
+  height: 100vh;
+}
+
+.AdminLeftPanel .AdminLogo {
+  margin-inline: auto;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 15px;
+}
+
+.AdminLeftPanel .AdminLogo img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.AdminLeftPanelLinks {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.AdminLeftPanelLinks a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 10px 12px 20px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 40px;
+}
+
+.activeAdminTab {
+  background: #ee3c63;
+  color: #fff !important;
+}
+
+.activeAdminTab svg {
+  fill: #fff !important;
+}
+
+.AdminLeftPanelLinks a svg {
+  fill: #222;
+}
+
+
+.AdminRightPanel {
+  width: 83.5%;
+}
+
+/* Admin Orders */
+
+.AdminOrders {
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  margin-left: 6px;
+  height: 100vh;
+  width: 100%;
+}
+
+.AdminOrdersTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.AdminOrdersTitleRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AdminOrdersTitleRight h1,
+.AdminOrdersTitleLeft h1 {
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.AdminOrdersTitleLeft p {
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.AdminOrdersTitleLeft p span,
+.AdminOrdersTitleRight span {
+  color: #b1b3b5;
+  font-weight: 400;
+}
+
+.AdminOrdersTitleRight button,
+.AdminOrdersTitle button {
+  background: #fff;
+  border: none;
+  margin-top: 8px;
+  cursor: pointer;
+  color: #ee3c63;
+  font-weight: 600;
+  display: flex;
+  gap: 5px;
+}
+
+.AdminOrdersTitleRight button svg,
+.AdminOrdersTitle button svg {
+  height: 18px;
+  width: 18px;
+  fill: #ee3c63;
+}
+
+.MainAdminOrdersNaviBar {
+  margin-top: 10px;
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  padding: 8px 4px;
+  color: #222222b3;
+}
+
+.MainAdminOrdersNaviBar p {
+  width: 240px;
+}
+
+.MainAdminOrdersNaviBar p:last-child {
+  width: 80px;
+}
+
+.CustomerOrder {
+  overflow: scroll;
+  height: 77.5vh;
+}
+
+.UpperCustomerOrderMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 8px;
+  transition: 0.1s ease-in-out;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.UpperCustomerOrderMain:hover {
+  background: #ffd2d454;
+  cursor: pointer;
+}
+
+.CustomerOrderDetails {
+  width: 240px;
+}
+
+.CustomerOrderDetails p {
+  font-size: 14px;
+  color: #222;
+  width: 240px;
+  font-weight: 500;
+}
+
+.CustomerOrderDetails input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #ee3c63;
+}
+
+.CustomerOrderDetails:first-child {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.CustomerOrderDetails:last-child {
+  width: 80px;
+}
+
+.CustomerOrderDetails:last-child p {
+  background: #eeeeee;
+  padding: 3px 12px;
+  text-align: center;
+  border-radius: 50px;
+  width: 80px;
+}
+
+.CustomerOrderDetails:nth-child(4) p {
+  background: #ffd2d4;
+  padding: 3px 12px;
+  text-align: center;
+  border-radius: 50px;
+  color: #ee3c63;
+  font-size: 13px;
+  font-weight: 600;
+  max-width: 100px;
+}
+
+.CustomerOrderMainFull {
+  height: 0;
+  overflow: scroll;
+  background: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: none !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.CustomerOrderMainFullUserData:nth-child(2) {
+  width: 250px;
+}
+
+.CustomerOrderMainFullUserData h1 {
+  font-size: 18px;
+  color: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.CustomerOrderMainFullUserData p {
+  font-size: 14px;
+  color: #222;
+  line-height: 24px;
+}
+
+.CustomerOrderMainFullUserData p b {
+  font-weight: 600;
+}
+
+.CustomerOrderDetailsMainCard {
+  border: 1px solid #d1d1d1;
+  padding: 10px;
+  width: 400px;
+  cursor: pointer;
+  border-bottom: none;
+}
+
+.CustomerOrderDetailsMainCard:last-child {
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.CustomerOrderDetailsMainCard p {
+  margin-top: 6px;
+}
+
+.AdminAddProductsMain {
+  overflow-y: scroll;
+  height: 85vh;
+}
+
+.AdminAddedProductMain {
+  margin-top: 41px;
+}
+
+.AdminAddProductsMainNavi {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  padding: 8px 4px;
+  color: #222222b3;
+  position: fixed;
+  width: 80.5%;
+  background: #fff;
+}
+
+.AdminAddProductsMainNavi p {
+  width: 120px;
+}
+
+.AdminAddProductsMainNavi p:nth-child(2) {
+  width: 300px;
+}
+
+.UpperAddedProductMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 0 0;
+  transition: 0.1s ease-in-out;
+  padding: 12px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  max-height: 41px;
+}
+
+.UpperAddedProductMain:hover {
+  background-color: #ffd2d454;
+}
+
+.AdminAddedProductDetails {
+  width: 120px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.AdminAddedProductDetails input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #ee3c63;
+}
+
+.AdminAddedProductDetails p {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 300px;
+  font-size: 14px;
+  color: #222;
+  font-weight: 500;
+  text-overflow: ellipsis;
+}
+
+.AdminAddedProductDetails:nth-child(2) {
+  width: 300px;
+}
+
+.AddAdminOrderMainFull {
+  height: 0;
+  overflow: scroll;
+  background: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: none !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.AddAdminOrderMainFullOrderData {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
+
+.AddAdminOrderMainFullOrderData h1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.AddAdminOrderMainFullOrderData p {
+  font-size: 14px;
+  color: #222;
+  line-height: 24px;
+}
+
+.AddAdminOrderMainFullOrderData p b {
+  font-weight: 600;
+}
+
+.AddAdminOrderMainFullOrderData button {
+  width: 130px;
+  margin-left: 87.5%;
+  height: 35px;
+  cursor: pointer;
+  background: #ee3c63;
+  font-weight: 400;
+  font-size: 13px;
+  color: #fff;
+  border-radius: 4px;
+  border: 1px solid #e4a19a;
+  outline: none;
+}
+
+.AddAdminOrderMainFullOrderData button:hover {
+  background: #ec335b;
+}
+
+.AdminProductEditOverLay {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.15);
+  top: 0;
+  left: 0;
+}
+
+.AdminProductEdit {
+  width: 75%;
+  height: 80vh;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #dedede;
+  position: absolute;
+  top: 10%;
+  left: 12.5%;
+  box-shadow: 0px 0px 155px 37px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.AdminProductEditTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.AdminProductEditTitle h1 {
+  color: #222;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.AdminProductEditTitle button {
+  background: none;
+  border: none;
+}
+
+.AdminProductEditTitle svg {
+  height: 28px;
+  width: 28px;
+  fill: #222;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.ColorVariantAddInputBtn {
+  width: auto;
+  display: flex;
+  gap: 10px;
+  font-weight: 500;
+  align-items: center;
+  height: 35px;
+  padding: 5px 8px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.ColorVariantAddInputBtn:hover {
+  background: #f0f0f0;
+}
+
+.ColorVariantAddInputBtn svg {
+  width: 18px;
+  height: 18px;
+  fill: #222;
+}
+
+.productImages {
+  margin-bottom: 20px;
+}
+
+.productImages .LoginInputs img {
+  width: auto;
+  margin-right: 10px;
+  height: 50px;
+  object-fit: cover;
+  border: none;
+}
+
+.AdminProductEdit .LoginInputs {
+  width: 75%;
+}
+
+.AdminProductEdit .LoginInputs textarea {
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid #dedede;
+  padding: 15px;
+  height: 160px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.AdminEditContent {
+  margin-top: 30px;
+}
+
+.AdminEditContent h3 {
+  font-size: 18px;
+  color: #222;
+  font-weight: 500;
+}
+
+.AdminEditContentInputs {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.AdminEditContentInputs input {
+  width: 300px;
+  border: none;
+  padding: 5px;
+  outline: none;
+  border-bottom: 1px solid #dedede;
+  font-size: 14px;
+  color: #222;
+}
+
+.AdminEditContentInputs button {
+  background: none;
+  border: none;
+  height: 25px;
+  width: 25px;
+}
+
+.AdminEditContentInputs button svg {
+  fill: #222;
+  height: 20px;
+  width: 20px;
+  margin-top: 5px;
+}
+
+.ShippingPolicyMain {
+  max-width: 670px;
+  margin-bottom: 40px;
+}
+
+.ShippingPolicyMain h1 {
+  font-size: 36px;
+  margin: 0 0 24px;
+  color: #1a1a1a;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.ShippingPolicyMain p {
+  font-size: 15px;
+  margin: 15px 0 25px 0;
+  color: #222;
+  line-height: 26px;
+  font-weight: 300;
+}
+
+.ShippingPolicyMain li {
+  font-size: 15px;
+  margin: 15px 0 25px 0;
+  color: #222;
+  list-style: square;
+  text-align: start;
+  line-height: 26px;
+  font-weight: 300;
+}
+
+.ShippingPolicyMain li b,
+.ShippingPolicyMain p b {
+  font-weight: 500;
+}
+
+.ShippingPolicyMain a {
+  font-size: 15px;
+  color: #222;
+  border-bottom: 1px solid #666;
+  text-decoration: none;
+}
+
+.Faq {
+  max-width: 650px;
+}
+
+.Faq details {
+  border-bottom: 1px solid #dedede;
+  width: auto;
+  color: #222;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 24px;
+  padding: 21px 24px;
+  cursor: pointer;
+}
+
+.Faq details div {
+  margin: 0;
+}
+
+.Faq details:last-child {
+  border-bottom: none;
+}
+
+.ContactUsMain .OnlineDesigner {
+  margin: 50px 200px 15px 200px;
+}
+
+.ContactUs {
+  text-align: center;
+}
+
+.ContactUs .ContactUsSmall {
+  margin-bottom: 40px;
+  line-height: 24px;
+}
+
+.ContactUs .ContactUsSmall b {
+  font-weight: 500;
+}
+
+.ContactUs .ContactUsSmall a {
+  font-size: 15px;
+  color: #222;
+  border-bottom: 1px solid #666;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.ContactUs .ContactUsSmall p {
+  font-size: 15px;
+  color: #222;
+  font-weight: 300;
+}
