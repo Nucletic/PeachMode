@@ -146,13 +146,6 @@ exports.updateAddress = async (req, res, next) => {
   }
 };
 
-
-
-
-
-
-
-
 exports.addNewAddress = async (req, res, next) => {
   try {
     const { userId, addressId, firstname, lastname, company, phone,
@@ -187,12 +180,6 @@ exports.addNewAddress = async (req, res, next) => {
   }
 };
 
-
-
-
-
-
-
 exports.deleteAddress = async (req, res, next) => {
   try {
     const { userId, addressId } = req.body;
@@ -214,11 +201,6 @@ exports.deleteAddress = async (req, res, next) => {
     next(error);
   }
 };
-
-
-
-
-
 
 exports.verifyAdmin = async (req, res, next) => {
   const { email, password } = req.body;
@@ -252,10 +234,6 @@ exports.verifyAdmin = async (req, res, next) => {
   }
 }
 
-
-
-
-
 const generateOTP = () => {
   const digits = '0123456789';
   let OTP = '';
@@ -264,11 +242,6 @@ const generateOTP = () => {
   }
   return OTP;
 }
-
-
-
-
-
 
 exports.forgotPassword = async (req, res, next) => {
   try {
@@ -320,12 +293,6 @@ exports.forgotPassword = async (req, res, next) => {
     res.status(500).json({ message: 'An error occurred' });
   }
 };
-
-
-
-
-
-
 
 exports.verifyOTP = async (req, res, next) => {
   try {

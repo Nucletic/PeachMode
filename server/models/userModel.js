@@ -45,7 +45,6 @@ const UserSchema = new Schema({
       addressId: {
         type: Number,
         required: true,
-        unique: true
       },
       firstname: {
         type: String,
