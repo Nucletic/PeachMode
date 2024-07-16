@@ -11,7 +11,7 @@ export const UpdateAddressForm = () => {
 
   const auth = async () => {
     try {
-      const response = await fetch('http://localhost:5000/account', {
+      const response = await fetch('https://peachmode-server.onrender.com/account', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -57,7 +57,7 @@ export const UpdateAddressForm = () => {
     const setDefaultCheckBox = document.getElementById('SetDefaultAdd');
     const { addressId, firstname, lastname, company, phone, address1, address2, city, zipcode } = userInfo;
     try {
-      const response = await fetch('http://localhost:5000/updateAddress', {
+      const response = await fetch('https://peachmode-server.onrender.com/updateAddress', {
         method: 'POST',
         withCredentials: true,
         credentials: 'include',

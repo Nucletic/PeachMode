@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { NewArrivalProduct } from './NewArrivalProduct'
 import { OnlineDesigner } from './OnlineDesigner'
 import { ViewAll } from './ViewAll'
-import FetchAPI from './FetchAPI'
+import fetchProducts from './FetchAPI'
 import { LoaderAnimation } from './LoaderAnimation'
 
 
 export const SaleHome = () => {
   const [products, setProducts] = useState(null);
   useEffect(() => {
-    const data = FetchAPI.fetchProducts().then(products => {
+    const data = fetchProducts().then(products => {
       setProducts(products.allProducts);
     });
   }, [])

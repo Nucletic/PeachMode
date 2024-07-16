@@ -14,7 +14,7 @@ export const Account = () => {
 
   const auth = async () => {
     try {
-      const response = await fetch('http://localhost:5000/account', {
+      const response = await fetch('https://peachmode-server.onrender.com/account', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -45,7 +45,7 @@ export const Account = () => {
     try {
       const getCon = window.confirm('Are you sure you want to delete this address?');
       if (getCon) {
-        const response = await fetch('http://localhost:5000/deleteAddress', {
+        const response = await fetch('https://peachmode-server.onrender.com/deleteAddress', {
           method: 'POST',
           withCredentials: true,
           headers: {
@@ -68,7 +68,7 @@ export const Account = () => {
 
   const logOut = async () => {
     try {
-      const res = await fetch('http://localhost:5000/logOut', {
+      const res = await fetch('https://peachmode-server.onrender.com/logOut', {
         method: 'POST',
         withCredentials: true,
         headers: {
@@ -87,7 +87,7 @@ export const Account = () => {
   const [userOrders, setUserOrders] = useState();
   const getUserOrders = async () => {
     try {
-      const response = await fetch("http://localhost:5000/userOrders", {
+      const response = await fetch("https://peachmode-server.onrender.com/userOrders", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

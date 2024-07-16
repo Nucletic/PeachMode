@@ -26,7 +26,7 @@ export const ChangePassword = () => {
     e.preventDefault();
     const { email } = userData;
     try {
-      const response = await fetch('http://localhost:5000/forgotPassword', {
+      const response = await fetch('https://peachmode-server.onrender.com/forgotPassword', {
         method: 'PUT',
         credentials: 'include',
         headers: {

@@ -8,7 +8,7 @@ export const Admin = () => {
   const [login, setLogin] = useState(false);
   const auth = async () => {
     try {
-      const response = await fetch('http://localhost:5000/account', {
+      const response = await fetch('https://peachmode-server.onrender.com/account', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -102,7 +102,7 @@ const AdminOrders = () => {
 
   const [orders, setOrders] = useState();
   const showOrders = async () => {
-    const res = await fetch('http://localhost:5000/getOrders', {
+    const res = await fetch('https://peachmode-server.onrender.com/getOrders', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -141,7 +141,7 @@ const AdminOrders = () => {
   const PostDelivered = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/setDelivered', {
+      const res = await fetch('https://peachmode-server.onrender.com/setDelivered', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -337,7 +337,7 @@ const AdminAddProducts = () => {
   const [Products, setProducts] = useState();
   const fetchProducts = async () => {
     try {
-      const res = await fetch('http://localhost:5000/products', {
+      const res = await fetch('https://peachmode-server.onrender.com/products', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -353,7 +353,7 @@ const AdminAddProducts = () => {
   const deleteProduct = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/deleteProduct', {
+      const res = await fetch('https://peachmode-server.onrender.com/deleteProduct', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -375,7 +375,7 @@ const AdminAddProducts = () => {
   const SoldOutProduct = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/setSoldOut', {
+      const res = await fetch('https://peachmode-server.onrender.com/setSoldOut', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -496,7 +496,7 @@ const AddGiftCard = () => {
   const [giftContent, setGiftContent] = useState();
   const fetchGiftCard = async () => {
     try {
-      const res = await fetch('http://localhost:5000/getGiftCards', {
+      const res = await fetch('https://peachmode-server.onrender.com/getGiftCards', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -544,7 +544,7 @@ const AddGiftCard = () => {
   const postEditedCards = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/newGiftCards', {
+      const res = await fetch('https://peachmode-server.onrender.com/newGiftCards', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -605,7 +605,7 @@ const AdminEditContent = () => {
   const [Content, setContent] = useState();
   const fetchContent = async () => {
     try {
-      const res = await fetch('http://localhost:5000/getContent', {
+      const res = await fetch('https://peachmode-server.onrender.com/getContent', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -694,7 +694,7 @@ const AdminEditContent = () => {
   const postEditedContent = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/saveContent', {
+      const res = await fetch('https://peachmode-server.onrender.com/saveContent', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -886,7 +886,7 @@ const AdminProductEdit = (props) => {
   const sendAddProducts = async () => {
     try {
       const SubmitBtn = document.querySelector('.AdminProductEdit .LoginBtn button');
-      const res = await fetch('http://localhost:5000/addProduct', {
+      const res = await fetch('https://peachmode-server.onrender.com/addProduct', {
         method: 'POST',
         withCredentials: true,
         credentials: 'include',
@@ -915,7 +915,7 @@ const AdminProductEdit = (props) => {
   const editTheProduct = async () => {
     try {
       const SubmitBtn = document.querySelector('.AdminProductEdit .LoginBtn button');
-      const response = await fetch('http://localhost:5000/editProduct', {
+      const response = await fetch('https://peachmode-server.onrender.com/editProduct', {
         method: 'PUT',
         withCredentials: true,
         credentials: 'include',

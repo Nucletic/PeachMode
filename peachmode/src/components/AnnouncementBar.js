@@ -4,7 +4,7 @@ export const AnnouncementBar = () => {
   const [BarText, setBarText] = useState();
   const getBarText = async () => {
     try {
-      const res = await fetch('http://localhost:5000/getContent', {
+      const res = await fetch('https://peachmode-server.onrender.com/getContent', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

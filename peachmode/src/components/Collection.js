@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { LeaderTitle } from './LeaderTitle'
 import { NewArrivalProduct } from './NewArrivalProduct'
-import FetchAPI from './FetchAPI'
+import fetchProducts from './FetchAPI'
 import { LoaderAnimation } from './LoaderAnimation'
 import { useSearchContext } from './context/SearchContext'
 import { useParams } from 'react-router-dom'
@@ -41,7 +41,7 @@ export const Collection = () => {
 
   const [products, setProducts] = useState(null);
   useEffect(() => {
-    const data = FetchAPI.fetchProducts().then(products => {
+    const data = fetchProducts().then(products => {
       setProducts(products.allProducts);
     });
   }, [])

@@ -37,7 +37,7 @@ export const ContactInformation = () => {
 
   const auth = async () => {
     try {
-      const response = await fetch('http://localhost:5000/account', {
+      const response = await fetch('https://peachmode-server.onrender.com/account', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -144,7 +144,7 @@ export const ContactInformation = () => {
   const checkGiftCard = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/verifyGiftCards', {
+      const response = await fetch('https://peachmode-server.onrender.com/verifyGiftCards', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -456,7 +456,7 @@ const Shipping = () => {
   const CompletePayment = async (e) => {
     try {
       e.preventDefault();
-      const response = await fetch('http://localhost:5000/checkOut', {
+      const response = await fetch('https://peachmode-server.onrender.com/checkOut', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -483,7 +483,7 @@ const Shipping = () => {
   const postData = async (e) => {
     e.preventDefault();
     try {
-      await fetch('http://localhost:5000/addOrder', {
+      await fetch('https://peachmode-server.onrender.com/addOrder', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -501,7 +501,7 @@ const Shipping = () => {
 
   const getKey = async () => {
     try {
-      await fetch('http://localhost:5000/getKey', {
+      await fetch('https://peachmode-server.onrender.com/getKey', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -526,7 +526,7 @@ const Shipping = () => {
       description: "Tutorial of RazorPay",
       image: "",
       order_id: order.id,
-      callback_url: "http://localhost:5000/paymentVerification",
+      callback_url: "https://peachmode-server.onrender.com/paymentVerification",
       prefill: {
         name: usInfo.firstname + ' ' + usInfo.lastname,
         email: usInfo.email,

@@ -1,8 +1,8 @@
 // Fetching Products
 
-exports.fetchProducts = async () => {
+const fetchProducts = async () => {
   try {
-    const res = await fetch('http://localhost:5000/products', {
+    const res = await fetch('https://peachmode-server.onrender.com/products', {
       method: 'GET',
       headers: {
         accept: 'application/json',
@@ -15,3 +15,5 @@ exports.fetchProducts = async () => {
     throw new Error(error);
   }
 }
+
+export default fetchProducts;

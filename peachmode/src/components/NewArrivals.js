@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { NewArrivalProduct } from './NewArrivalProduct'
 import { ViewAll } from './ViewAll'
 import { LeaderTitle } from './LeaderTitle'
-import FetchAPI from './FetchAPI'
+import fetchProducts from './FetchAPI'
 import { LoaderAnimation } from './LoaderAnimation'
 
 
 export const NewArrivals = () => {
   const [products, setProducts] = useState(null);
   useEffect(() => {
-    const data = FetchAPI.fetchProducts().then(products => {
+    const data = fetchProducts().then(products => {
       setProducts(products.allProducts);
     });
   }, [])

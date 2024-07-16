@@ -4,7 +4,7 @@ import { LeaderTitle } from './LeaderTitle';
 import { NewArrivalProduct } from './NewArrivalProduct';
 import { LoaderAnimation } from './LoaderAnimation';
 import { useCartContext } from './context/CartContext';
-import FetchAPI from './FetchAPI'
+import fetchProducts from './FetchAPI'
 import { useNavigate } from 'react-router-dom';
 
 export const ProductPage = () => {
@@ -13,7 +13,7 @@ export const ProductPage = () => {
 
   const [products, setProducts] = useState(null);
   useEffect(() => {
-    const data = FetchAPI.fetchProducts().then(products => {
+    const data = fetchProducts().then(products => {
       setProducts(products.allProducts);
     });
   }, [])

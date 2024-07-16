@@ -37,7 +37,7 @@ export const AdminLogin = () => {
   const sendData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/verifyAdmin', {
+      const response = await fetch('https://peachmode-server.onrender.com/verifyAdmin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

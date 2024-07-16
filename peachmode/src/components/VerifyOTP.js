@@ -32,7 +32,7 @@ export const VerifyOTP = () => {
     e.preventDefault();
     const { OTP } = userData;
     try {
-      const response = await fetch('http://localhost:5000/verifyOTP', {
+      const response = await fetch('https://peachmode-server.onrender.com/verifyOTP', {
         method: 'PUT',
         credentials: 'include',
         headers: {
@@ -64,7 +64,7 @@ export const VerifyOTP = () => {
     } else {
       try {
         const { password } = userData;
-        const response = await fetch('http://localhost:5000/changePassword', {
+        const response = await fetch('https://peachmode-server.onrender.com/changePassword', {
           method: 'PUT',
           credentials: 'include',
           headers: {
